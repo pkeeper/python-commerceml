@@ -20,7 +20,17 @@ python-commerceml
 -----------------
 
 `CML_FILE_LIMIT`
-`CML_USE_ZIP`
+`CML_USE_ZIP` - Пока не работает
+`CML_IMPORT_FOLDER` - опционально, куда загуржать XML с товарами и заказами.
+
+`CML_MODELS_APP` - модуль с моделями данных или указывать каждую модель отдельно:
+`CML_PRODUCT`
+`CML_PRODUCT_PROPERTY`
+`CML_CATEGORY`
+`CML_MANUFACTURER`
+`CML_IMAGE`
+`CML_ORDER`
+`CML_ORDER_ITEM`
 
 
 
@@ -28,12 +38,10 @@ python-commerceml
 TODO
 -----------------
 
-* Написать документация
+* Написать документацию
 * Написать тесты
-* django. создание папки в MEDIA_ROOT по умолчанию
 * django. USE_ZIP == True
 * django. FILE_LIMIT > 0
 * django. импорт и экспорт заказов
 * django. экспорт каталога
 * django. basic auth
-* django. lfs. api

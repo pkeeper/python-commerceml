@@ -35,6 +35,8 @@ def dispatcher(request):
     try:
         view = globals()['%s_%s' % (type, mode)]
     except KeyError:
+        
+        print('invalid request %s' % globals())
         output = u'\n'.join([RESPONSE_ERROR, 'Unknown command type.'])
         return HttpResponse(output)
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.db.models import signals
+from django.db.models import signals, Model
 
 import dbsettings
 from dbsettings import values
@@ -39,3 +39,39 @@ class Exchange1c(dbsettings.Group):
                                     required=False, default='')
 
 exchange_1c = Exchange1c(u'Обмен с 1с')
+
+
+class Shop(Model):
+    pass
+
+
+class Order(Model):
+    id = None
+    number = id
+
+    shipping_method = None
+    payment_method = None
+
+class OrderItem(Model):
+    id = None
+
+
+class Category(Model):
+    pass
+
+
+class Product(Model):
+    pass
+
+
+class ProductProperty(Model):
+    pass
+
+
+class Manufacturer(Model):
+    pass
+
+
+class Image(Model):
+    pass
+

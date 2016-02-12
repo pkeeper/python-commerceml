@@ -7,7 +7,7 @@ from commerceml.contrib.django.signals import (requested_catalog_file,
                                                requested_sale_query,
                                                requested_sale_success,
                                                requested_sale_file)
-from commerceml.utils import Importer, export_orders
+from commerceml import Importer, export_orders
 
 
 def import_catalog_file(sender, **kwargs):
@@ -23,7 +23,7 @@ def import_catalog(sender, **kwargs):
     response =  Importer(filename, request.session).import_catalog()
     sender['response'] = response
 
-requsted_catalog_import.connect(import_catalog)
+requested_catalog_import.connect(import_catalog)
 
 def export_sale(sender, **kwargs):
     request = sender['request']
@@ -40,3 +40,5 @@ def import_sale(sender, **kwargs):
     response = Importer(filename, request.session).import_orders()
     sender['response'] = response
 requested_sale_file.connect(import_sale)
+
+# FIXME: requested_sale_success

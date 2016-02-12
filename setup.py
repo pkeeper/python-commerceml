@@ -21,10 +21,10 @@ setup(
             'README.md'
         )
     ).read(),
-    author='Victor Safronovich',
-    author_email='vsafronovich@gmail.com',
+    author='Artem Melanichm Victor Safronovich',
+    author_email='melanich.art@gmail.com',
     license='MIT',
-    url='http://github.com/suvit/python-commerceml',
+    url='http://github.com/pkeeper/python-commerceml',
     zip_safe=False,
     packages=find_packages(exclude=['docs', 'examples', 'tests']),
     #install_requires=['lxml', 'elementflow'],
