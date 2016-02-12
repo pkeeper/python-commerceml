@@ -5,7 +5,7 @@ import dbsettings
 from dbsettings import values
 
 
-def create_perm(app, created_models, verbosity, db, **kwargs):
+def create_perm(**kwargs):
     """
     Creates a fake content type and permission
     to be able to check for permissions
@@ -15,7 +15,6 @@ def create_perm(app, created_models, verbosity, db, **kwargs):
 
     if ContentType._meta.installed and Permission._meta.installed:
         content_type, created = ContentType.objects.get_or_create(
-            name='exchange_1c',
             app_label='cml',
             model='cml')
 
@@ -25,7 +24,7 @@ def create_perm(app, created_models, verbosity, db, **kwargs):
             codename='exchange_1c')
 
 
-signals.post_syncdb.connect(create_perm, dispatch_uid="cml.create_perm")
+signals.post_migrate.connect(create_perm, dispatch_uid="cml.create_perm")
 
 
 class Exchange1c(dbsettings.Group):
